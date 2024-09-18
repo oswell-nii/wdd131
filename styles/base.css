@@ -75,7 +75,7 @@ img {
 main {
     display: grid;
     grid-template-columns: auto auto;
-    width: 900px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
