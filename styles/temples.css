@@ -77,7 +77,6 @@ main {
     grid-template-columns: 1fr;
 }
 figure {
-    display: grid;
     grid-template-columns: auto;
     justify-content: center;
     text-align: center;
