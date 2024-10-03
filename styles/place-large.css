@@ -40,4 +40,13 @@
         color: var(--white);
     }
 
+    .hero {
+        position: relative;
+        z-index: 1;
+    }
+
+    .data, .weather {
+        z-index: 2;
+    }
+
 }
