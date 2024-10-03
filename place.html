@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homepage of Ghana, the place I live">
+    <meta name="author" content="Oswell Okine">
+    <title>Ghana</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/windchill.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Ghana</h1>
+    </header>
+    <aside></aside>
+    <main>
+        <picture>
+            <source media="(min-width: 1000px)" srcset="/images/hero-large.webp">
+            <source media="(min-width: 750px)" srcset="images/hero-medium.webp">
+            <img src="images/hero-small.webp" alt="Independence Square - Accra" width="500" height="250">
+        </picture>
+        <section class="card data">
+            <h2>Data</h2>
+            <div class="col-2">
+                <span class="label">Area:</span>
+                <span class="value">239,567 sq km</span>
+                <span class="label">Population:</span>
+                <span class="value">35,000,000</span>
+                <span class="label">Capital:</span>
+                <span class="value">Greater Accra</span>
+                <span class="label">Languages:</span>
+                <span class="value">English, Akan</span>
+                <span class="label">Currency:</span>
+                <span class="value">Ghana Cedis (GHS)</span>
+                <span class="label">Time Zone:</span>
+                <span class="value">GMT</span>
+                <span class="label">Calling Code:</span>
+                <span class="value">+233</span>
+                <span class="label">Internet TLD:</span>
+                <span class="value">.gh</span>
+            </div>
+        </section>
+
+        <section class="card weather">
+            <h2>Weather</h2>
+            <img src="images/weather-icon.svg" alt="weather icon">
+            <div class="col-2">
+                <span class="label">Temperature:</span>
+                <span class="value">10 C</span>
+                <span class="label">Conditions:</span>
+                <span class="value">Sunny</span>
+                <span class="label">Wind:</span>
+                <span class="value">5km</span>
+                <span class="label">Wind Chill:</span>
+                <span class="value" id="wcf"></span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> 🧑‍💻 Oswell Okine 🌍 Ghana</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

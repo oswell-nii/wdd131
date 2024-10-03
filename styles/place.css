@@ -1,0 +1,100 @@
+:root {
+    --red: #CF0921;
+    --yellow: #FCD20F;
+    --green: #006B3D;
+    --white: #fff;
+    --black: #000000;
+    --border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--red);
+}
+
+header {
+    background-color: #CF0921;
+    text-align: center;
+    color: var(--white);
+    padding: 1.5rem;
+}
+
+footer {
+    background-color: var(--black);
+    padding: 1.5rem;
+    color: var(--white);
+    text-align: center;
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+aside {
+    background-color: var(--green);
+    padding: 0.5rem;
+}
+
+picture img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: "Lato", system-ui;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2 {
+    padding: 1rem;
+    font-family: "Poppins", system-ui;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.label {
+    font-size: 0.85rem;
+    text-align: right;
+    font-family: "Lato", system-ui;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.value {
+    font-size: 0.9rem;
+    font-family: "Lato", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.weather img {
+    width: 100px;
+    height: 100px;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
