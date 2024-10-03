@@ -1,4 +1,4 @@
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
     h1 {
         font-size: 3rem;
     }
@@ -41,7 +41,6 @@
     }
 
     .hero {
-        position: relative;
         z-index: 1;
     }
 
