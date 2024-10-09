@@ -1,0 +1,48 @@
+/* Larger Views */
+@media screen and (min-width: 700px) {
+    #menu {
+        display: none;
+    }
+
+
+    .navigation {
+        flex-direction: row;
+        margin-right: 4rem;
+        width: 450px;
+    }
+
+    .navigation a {
+        display: block;
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigation a:hover {
+        background-color: #1282A2;
+        border-radius: 50px;
+        transition: 0.5s;
+        transform: scale(1.15);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 1rem;
+    }
+    
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+}
