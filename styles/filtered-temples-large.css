@@ -42,7 +42,6 @@
 
     h2 {
         font-size: 2rem;
-        margin-bottom: 4rem;
     }
 
     .label-location, .label-dedicated, .label-area {
@@ -51,5 +50,4 @@
     p {
         font-size: 1rem;
     }
-    
 }

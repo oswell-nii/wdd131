@@ -1,7 +1,7 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%
 }
 
 
@@ -104,7 +104,6 @@ p {
     font-weight: 700;
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: rgb(118, 93, 177);
 }
 footer {
     text-align: center;
