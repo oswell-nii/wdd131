@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DAE0F2;
+}
+
+header {
+    background-color: #111344;
+    padding: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.wf {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: 1px solid rgb(187, 183, 183);
+    border-radius: 6px;
+    background-color: #F9CFF2;
+    max-width: 600px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.wf label {
+    display: block;
+    padding-top: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.ratingBox {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 400px;
+    width: 100%;
+}
+.ratingBox label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.wf select,
+.wf input[type="date"],
+.wf input[type="text"],
+.wf input[type="submit"] {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+}
+
+.wf input[type="date"] {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+label textarea {
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    min-height: 20vh;
+    resize: none;
+}
+
+#product-name, #user-name{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+.wf input[type="submit"] {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    margin-top: 1rem;
+    background-color: #52154E;
+    box-shadow: 1px 1px 4px #999;
+    color: #fff;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem 0% 2rem 0%;
+    cursor: pointer;
+}
+
+.wf input[type="date"],
+#product-name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 1%;
+}
+
+
+
+footer {
+    text-align: center;
+    background-color: #111344;
+    padding: 0.5rem;
+    color: #fff;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+label span {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.review-main {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+    .wf {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

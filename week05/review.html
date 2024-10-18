@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Review Confirmation Page">
+    <meta name="author" content="Oswell Okine">
+    <title>Review Confirmation</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/getdate.js" defer></script>
+    <script>
+        window.onload = function() {
+            // Get review count from localStorage
+            const reviewCount = localStorage.getItem('reviewCount') || 0;
+            document.getElementById('reviewCountDisplay').textContent = reviewCount;
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Review!</h1>
+    </header>
+
+    <main class="review-main">
+        <p>You have submitted <strong id="reviewCountDisplay">0</strong> reviews so far.</p>
+    </main>
+</body>
+</html>
