@@ -45,7 +45,6 @@ h1 {
     align-items: center;
 }
 
-
 .wf select,
 .wf input[type="date"],
 .wf input[type="text"],
@@ -60,7 +59,6 @@ h1 {
     padding-bottom: 0.5rem;
 }
 
-
 label textarea {
     display: block;
     max-width: 400px;
@@ -74,7 +72,6 @@ label textarea {
     padding-bottom: 0.5rem;
 }
 
-
 .wf input[type="submit"] {
     padding-top: .8rem;
     padding-bottom: .8rem;
@@ -86,6 +83,10 @@ label textarea {
     max-width: 400px;
     margin: 2rem 0% 2rem 0%;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
 }
 
 .wf input[type="date"],
@@ -95,8 +96,6 @@ label textarea {
     font-style: normal;
     padding-left: 1%;
 }
-
-
 
 footer {
     text-align: center;
