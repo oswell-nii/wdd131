@@ -13,7 +13,7 @@ hamButton.addEventListener('click', () => {
 
 // Select elements
 const bookList = document.getElementById('bookList');
-const genreFilter = document.getElementById('genreFilter');
+const categoryFilter = document.getElementById('categoryFilter');
 const categorySelect = document.getElementById('category');
 const bookForm = document.getElementById('bookForm');
 const titleInput = document.getElementById('title');
@@ -22,33 +22,39 @@ const authorInput = document.getElementById('author');
 // Book array (load from localStorage if available)
 let books = JSON.parse(localStorage.getItem('books')) || [];
 
-// Genre and Category arrays
-const genres = [
-    'Fiction', 
-    'Non-Fiction', 
-    'Fantasy', 
-    'Mystery', 
-    'Romance', 
-    'Science Fiction'
-];
-const categories = [
-    'New Release', 
-    'Bestseller', 
-    'Classic', 
-    'Award Winner'
-];
+// Category array and default books for each category
+const categories = ['New Release', 'Bestseller', 'Classic', 'Award Winner'];
 
-// Function to populate the Genre and Category dropdowns
+const defaultBooks = {
+    'New Release': [
+        { title: 'The Midnight Library', author: 'Matt Haig', genre: 'Fiction', category: 'New Release' },
+        { title: 'Project Hail Mary', author: 'Andy Weir', genre: 'Science Fiction', category: 'New Release' }
+    ],
+    'Bestseller': [
+        { title: 'Where the Crawdads Sing', author: 'Delia Owens', genre: 'Fiction', category: 'Bestseller' },
+        { title: 'Becoming', author: 'Michelle Obama', genre: 'Non-Fiction', category: 'Bestseller' }
+    ],
+    'Classic': [
+        { title: '1984', author: 'George Orwell', genre: 'Fiction', category: 'Classic' },
+        { title: 'To Kill a Mockingbird', author: 'Harper Lee', genre: 'Fiction', category: 'Classic' }
+    ],
+    'Award Winner': [
+        { title: 'The Underground Railroad', author: 'Colson Whitehead', genre: 'Fiction', category: 'Award Winner' },
+        { title: 'The Night Watchman', author: 'Louise Erdrich', genre: 'Fiction', category: 'Award Winner' }
+    ]
+};
+
+// Function to populate the Category dropdowns
 function populateDropdowns() {
-    // Populate Genre Filter with genres
-    genres.forEach(genre => {
+    // Populate Category Filter
+    categories.forEach(category => {
         const option = document.createElement('option');
-        option.value = genre;
-        option.textContent = genre;
-        genreFilter.appendChild(option);
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
     });
 
-    // Populate Category Select
+    // Populate Category Select for form
     categories.forEach(category => {
         const option = document.createElement('option');
         option.value = category;
@@ -57,19 +63,22 @@ function populateDropdowns() {
     });
 }
 
-// Function to display books based on selected genre
+// Function to display books based on selected category
 function displayBooks(filter) {
     bookList.innerHTML = ''; // Clear current list
+    
     if (!filter) {
-        return; // Do not display anything if no genre is selected
+        return; // Do not display anything if no category is selected
     }
 
-    const filteredBooks = books.filter(book => book.genre === filter);
-    
-    if (filteredBooks.length === 0) {
-        bookList.innerHTML = '<li>No books available for this genre.</li>';
+    // Combine default books with user-added books for the selected category
+    const userBooks = books.filter(book => book.category === filter);
+    const combinedBooks = [...defaultBooks[filter] || [], ...userBooks];
+
+    if (combinedBooks.length === 0) {
+        bookList.innerHTML = '<li>No books available for this category.</li>';
     } else {
-        filteredBooks.forEach(book => {
+        combinedBooks.forEach(book => {
             const bookItem = `<li><strong>${book.title}</strong> by ${book.author} (<strong>Genre:</strong> ${book.genre}, <strong>Category:</strong> ${book.category})</li>`;
             bookList.innerHTML += bookItem;
         });
@@ -82,18 +91,18 @@ function addBook(event) {
     const newBook = {
         title: titleInput.value,
         author: authorInput.value,
-        genre: genreFilter.value,
+        genre: "N/A", // Default to N/A since no genre input is available
         category: categorySelect.value
     };
     books.push(newBook);
     localStorage.setItem('books', JSON.stringify(books)); // Save to localStorage
-    displayBooks(genreFilter.value); // Refresh the list with the currently selected genre
+    displayBooks(categoryFilter.value); // Refresh the list with the currently selected category
     bookForm.reset(); // Reset the form
 }
 
 // Event Listeners
 bookForm.addEventListener('submit', addBook);
-genreFilter.addEventListener('change', () => displayBooks(genreFilter.value));
+categoryFilter.addEventListener('change', () => displayBooks(categoryFilter.value));
 
 // Initial Population of Dropdowns
 populateDropdowns();
