@@ -27,20 +27,20 @@ const categories = ['New Release', 'Bestseller', 'Classic', 'Award Winner'];
 
 const defaultBooks = {
     'New Release': [
-        { title: 'The Midnight Library', author: 'Matt Haig', genre: 'Fiction', category: 'New Release' },
-        { title: 'Project Hail Mary', author: 'Andy Weir', genre: 'Science Fiction', category: 'New Release' }
+        { title: 'The Midnight Library', author: 'Matt Haig', category: 'New Release' },
+        { title: 'Project Hail Mary', author: 'Andy Weir', category: 'New Release' }
     ],
     'Bestseller': [
-        { title: 'Where the Crawdads Sing', author: 'Delia Owens', genre: 'Fiction', category: 'Bestseller' },
-        { title: 'Becoming', author: 'Michelle Obama', genre: 'Non-Fiction', category: 'Bestseller' }
+        { title: 'Where the Crawdads Sing', author: 'Delia Owens', category: 'Bestseller' },
+        { title: 'Becoming', author: 'Michelle Obama', category: 'Bestseller' }
     ],
     'Classic': [
-        { title: '1984', author: 'George Orwell', genre: 'Fiction', category: 'Classic' },
-        { title: 'To Kill a Mockingbird', author: 'Harper Lee', genre: 'Fiction', category: 'Classic' }
+        { title: '1984', author: 'George Orwell', category: 'Classic' },
+        { title: 'To Kill a Mockingbird', author: 'Harper Lee', category: 'Classic' }
     ],
     'Award Winner': [
-        { title: 'The Underground Railroad', author: 'Colson Whitehead', genre: 'Fiction', category: 'Award Winner' },
-        { title: 'The Night Watchman', author: 'Louise Erdrich', genre: 'Fiction', category: 'Award Winner' }
+        { title: 'The Underground Railroad', author: 'Colson Whitehead', category: 'Award Winner' },
+        { title: 'The Night Watchman', author: 'Louise Erdrich', category: 'Award Winner' }
     ]
 };
 
@@ -79,7 +79,7 @@ function displayBooks(filter) {
         bookList.innerHTML = '<li>No books available for this category.</li>';
     } else {
         combinedBooks.forEach(book => {
-            const bookItem = `<li><strong>${book.title}</strong> by ${book.author} (<strong>Genre:</strong> ${book.genre}, <strong>Category:</strong> ${book.category})</li>`;
+            const bookItem = `<li><strong>${book.title}</strong> by ${book.author} (<strong>Category:</strong> ${book.category})</li>`;
             bookList.innerHTML += bookItem;
         });
     }
@@ -91,7 +91,6 @@ function addBook(event) {
     const newBook = {
         title: titleInput.value,
         author: authorInput.value,
-        genre: "N/A", // Default to N/A since no genre input is available
         category: categorySelect.value
     };
     books.push(newBook);
