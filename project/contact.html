@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Oswell's Book Recommendation Site">
+    <meta name="author" content="Oswell Okine">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles/bookrec.css">
+    <link rel="stylesheet" href="styles/bookrec-large.css">
+    <script src="scripts/bookrec.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Book Recommendation</h1>
+        <button type="button" id="menu" aria-label="menu"></button>
+        <nav class="navigation">
+            <a href="bookrec.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="wf">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to share your thoughts? Feel free to reach out to us!</p>
+            <form id="contactForm">
+                <label><strong>Name</strong>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </label>
+                
+                <label><strong>Email</strong>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </label>
+
+                <label><strong>Message</strong>
+                    <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                </label>
+                
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© <span id="currentYear"></span> 🧑‍💻 Oswell Okine 🌍 Ghana</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <a href="reference.html" class="reference">Reference</a>
+    </footer>
+</body>
+</html>

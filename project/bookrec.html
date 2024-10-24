@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oswell's Book Recommendation Site">
+    <meta name="author" content="Oswell Okine">
+    <title>Book Recommendation Site</title>
+    <link rel="stylesheet" href="styles/bookrec.css">
+    <link rel="stylesheet" href="styles/bookrec-large.css">
+    <script src="scripts/bookrec.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Book Recommendation</h1>
+        <button type="button" id="menu" aria-label="menu"></button>
+        <nav class="navigation">
+            <a href="bookrec.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source media="(min-width: 1000px)" srcset="images/books-large.webp">
+                <source media="(min-width: 500px)" srcset="images/books-medium.webp">
+                <img src="images/books-small.webp" alt="Accra Ghana Temple" width="500" height="250" loading="lazy">
+            </picture>
+        </div>
+        <section class="wf">
+            <h2>Book Recommendations</h2>
+    
+        <!-- Filter Dropdown -->
+            <label class="genreFilter"><strong>Filter by Genre: </strong>
+                <select name="genre" id="genreFilter" required>
+                    <option value="" disabled selected>Select ...</option>
+                </select>
+            </label>
+            
+            <!-- Book List -->
+            <ul id="bookList"></ul>
+            
+            <!-- Add New Book Form -->
+            <h2>Add a New Book</h2>
+            <form id="bookForm">
+                <label><strong>Title</strong><input type="text" id="title" placeholder="Book Title" required></label>
+                <label><strong>Author</strong></strong><input type="text" id="author" placeholder="Author" required></label>
+
+                <label><strong>Category</strong>
+                    <select name="category" id="category" required>
+                        <option value="" disabled selected>Select ...</option>
+                    </select>
+                </label>
+                
+                <input type="submit" value="Add Book">
+            </form>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© <span id="currentYear"></span> 🧑‍💻 Oswell Okine 🌍 Ghana</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <a href="reference.html" class="reference">Reference</a>
+
+    </footer>    
+</body>
+</html>
